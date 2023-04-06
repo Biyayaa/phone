@@ -1,0 +1,205 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.phoneframe{
+    width: 272px;
+    height: 570px;
+    border: 7px solid black;
+    border-radius: 10px;
+    /* background-color: bisque; */
+    position: relative;
+}
+
+.fullhomepage{
+    height: 570px;
+    /* background-color: red; */
+}
+
+#try{
+    height: 570px;
+    background-image: url(./images/desktop-wallpaper-samsung-s22-samsung-galaxy-s22-thumbnail.jpg);
+}
+
+
+
+.notifications{
+    display: flex;
+    padding-top: 5px;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: rgba(128, 128, 128, 0.431); */
+    font-size: 12px;
+    width: 100%;
+    position: relative;
+}
+
+.time{
+    padding-left: 7px;
+    color: white;
+    font-size: 12px;
+}
+
+.battery{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-left: 30px; */
+    /* text-align: right; */
+    color: white;
+}
+
+.camera{
+    width: 12px;
+    height: 12px;
+    border: 2px solid silver;
+    border-radius: 50px;
+    margin-left: 70px;
+}
+
+
+.bottom-icons {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 30px;
+    display: flex;
+    justify-content: space-around;
+    z-index: 1;
+    align-items: center;
+}
+
+/* .home{
+    background-color: rgba(255, 255, 255, 0.537);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;
+    align-items: center; 
+} */
+
+.icons{
+    width: 45px;
+}
+
+footer{
+    background-color: rgb(10, 33, 10);
+    width: 272.5px;
+    height: 10px;
+    position: absolute;
+    bottom: 0; /* added to fix to bottom of phoneframe */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.navigation-bar{
+    background-color: white;
+    width: 100px;
+    height: 3px;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+/* Headings styles */
+h2 {
+    font-size: 3rem;
+    font-weight: 400;
+    margin: 2rem 0 1rem;
+}
+
+/* Set alarm container styles */
+.setalarm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.setalarm select {
+    margin: 0 0.5rem;
+    font-size: 2rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+/* Active alarm container styles */
+.activealarm {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Snooze and stop button styles */
+#snoozeAlarm,
+#stopALarm {
+    margin: 1rem 0.5rem;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(255, 0, 0, 0.849);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#stopALarm:hover {
+    background-color: red;
+}
+
+#snoozeAlarm:hover {
+    background-color: rgba(139, 139, 68, 0.574);
+}
+
+/* Ring paragraph styles */
+#ring {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Set alarm button styles */
+button {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: rgba(255, 166, 0, 0.593);
+}
+
+
+#showAlarm, #cameraApp{
+    height: 570px;
+    display: none;
+}
+
+#shutterButton{
+    position: absolute;
+    bottom: 10px;
+}
