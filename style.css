@@ -43,7 +43,7 @@
     position: relative;
 }
 
-.time{
+#homeTime{
     padding-left: 7px;
     color: white;
     font-size: 12px;
@@ -194,12 +194,18 @@ button:hover {
 }
 
 
-#showAlarm, #cameraApp{
+#showAlarm, #cameraApp, #video{
     height: 570px;
     display: none;
+    width: 100%;
 }
 
 #shutterButton{
     position: absolute;
     bottom: 10px;
+}
+
+#video{
+    position: absolute;
+    
 }

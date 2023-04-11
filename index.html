@@ -21,7 +21,7 @@
                     <!-- notifications and camera -->
                     <div class="notifications">
                         <div>
-                            <span class="time">2:33</span>
+                            <span class="time" id="homeTime"></span>
                         </div>
                         
     
@@ -57,7 +57,7 @@
 
                 </div>
 
-
+                <!-- Alarm -->
                 <div id="showAlarm">
 
                     <!-- notifications and camera -->
@@ -105,7 +105,6 @@
                     <h3 id="alarmInfo">No Active Alarms</h3>
               
                     <div id="activeAlarm" class="activealarm">
-                      <!-- <button id="snoozeAlarm" onclick="snooze()">SNOOZE</button> -->
                       <p id="ring"></p>
                       <button id="stopALarm" onclick="stop()">STOP</button>
                     </div>
@@ -115,9 +114,12 @@
               
                   <audio
                     id="audio"
-                    src="./Alarm/Burna_Boy_-_Alarm_Clock.mp3"
+                    src="Burna_Boy_-_Alarm_Clock.mp3"
                   ></audio>
                 </div>
+
+
+                <!-- Camera -->
 
                 <div id="cameraApp">
 
