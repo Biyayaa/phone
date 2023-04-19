@@ -101,6 +101,113 @@ musicIcon.addEventListener("click", ()=>{
   musicApp.style.display = "block";
 })
 
+// Get references to the HTML elements
+let audioPlayer = document.getElementById("audioPlayer");
+let playButton = document.getElementById("playButton");
+let prevButton = document.getElementById("prevButton");
+let nextButton = document.getElementById("nextButton");
+let progress = document.getElementById("progress");
+let progressBar = document.getElementById("progressBar");
+let volumeSlider = document.getElementById("volumeSlider");
+let muteButton = document.getElementById("muteButton");
+
+// Define an array of audio tracks
+let tracks = ["./audio/Burna_Boy_-_Alarm_Clock.mp3", "./audio/Davido-No-Competition-feat.Asake-[TrendyBeatz.com].mp3", "./audio/ODUMODUBLVCK-Declan-Rice.mp3"];
+
+// Set the current track to the first track in the array
+let currentTrack = 0;
+
+// Function to play the current track
+function playTrack() {
+  // Set the audio source to the current track and play it
+  audioPlayer.src = tracks[currentTrack];
+  audioPlayer.play();
+  // Change the play button icon to a pause icon
+  playButton.innerHTML = "<i class='icofont-pause'></i>";
+}
+
+// Function to pause the current track
+function pauseTrack() {
+  // Pause the audio and change the play button icon to a play icon
+  audioPlayer.pause();
+  playButton.innerHTML = "<i class='icofont-play'></i>";
+}
+
+// Function to play the previous track
+function prevTrack() {
+  // Decrement the current track index
+  currentTrack--;
+  // If we've reached the beginning of the array, wrap around to the end
+  if (currentTrack < 0) {
+    currentTrack = tracks.length - 1;
+  }
+  // Play the new current track
+  playTrack();
+}
+
+// Function to play the next track
+function nextTrack() {
+  // Increment the current track index
+  currentTrack++;
+  // If we've reached the end of the array, wrap around to the beginning
+  if (currentTrack >= tracks.length) {
+    currentTrack = 0;
+  }
+  // Play the new current track
+  playTrack();
+}
+
+// Function to update the progress bar as the track plays
+function updateProgress() {
+  // Calculate the percentage of the track that has played
+  let percent = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+  // Set the width of the progress bar to the percentage
+  progress.style.width = percent + "%";
+}
+
+// Function to set the volume based on the value of the volume slider
+function setVolume() {
+  audioPlayer.volume = volumeSlider.value;
+}
+
+// Function to mute or unmute the audio based on the current volume level
+function muteVolume() {
+  if (audioPlayer.volume > 0) {
+    // If the volume is currently non-zero, mute the audio and change the mute button icon to an sound icon
+    audioPlayer.volume = 0;
+    muteButton.innerHTML = "<i class='icofont-volume-mute'></i>";
+  } else {
+    // If the volume is currently zero, unmute the audio and change the mute button icon to a volume up icon
+    audioPlayer.volume = volumeSlider.value;
+    muteButton.innerHTML = "<i class='icofont-volume-up'></i>";
+  }
+}
+
+// Add event listeners to the buttons and audio player to handle user interactions
+playButton.addEventListener("click", () => {
+  if (audioPlayer.paused) {
+    playTrack();
+  } else {
+    pauseTrack();
+  }
+});
+
+prevButton.addEventListener("click", prevTrack);
+
+nextButton.addEventListener("click", nextTrack);
+
+audioPlayer.addEventListener("timeupdate", updateProgress);
+
+progressBar.addEventListener("click", (e) => {
+  // Calculate the percentage of the progress bar that was clicked
+  let percent = e.offsetX / progressBar.offsetWidth;
+  // Set the current time of the audio to the corresponding time in the track
+  audioPlayer.currentTime = percent * audioPlayer.duration;
+});
+
+volumeSlider.addEventListener("input", setVolume);
+
+muteButton.addEventListener("click", muteVolume);
 
 
 
