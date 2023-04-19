@@ -40,13 +40,15 @@
     /* background-color: rgba(128, 128, 128, 0.431); */
     font-size: 12px;
     width: 100%;
-    position: relative;
+    position: absolute;
+    top: 0;
+    z-index: 5;
 }
 
 #homeTime{
     padding-left: 7px;
     color: white;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .battery{
@@ -66,6 +68,10 @@
     margin-left: 70px;
 }
 
+#cameraApp{
+    background-color: black;
+}
+
 
 .bottom-icons {
     position: absolute;
@@ -77,6 +83,21 @@
     z-index: 1;
     align-items: center;
 }
+.second-row-icons {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100px;
+    display: flex;
+    justify-content: space-around;
+    z-index: 1;
+    align-items: center;
+}
+
+#musicApp{
+    background-color: hotpink;
+}
+
 
 /* .home{
     background-color: rgba(255, 255, 255, 0.537);

@@ -5,7 +5,14 @@ let homepage = document.getElementById('homepage');
 let fullHomepage = document.getElementById('fullHomepage');
 let showAlarm = document.getElementById('showAlarm');
 let try2 = document.getElementById('try');
+let musicApp = document.getElementById('musicApp');
 let homeTime = document.getElementById('homeTime');
+let time = document.getElementById("time");
+let date, hours, minutes, seconds, amPm;
+let cameraApp = document.getElementById('cameraApp');
+
+// Hide other pages on load
+musicApp.style.display = "none";
 
 
 
@@ -46,25 +53,18 @@ showAlarm.style.backgroundColor = "blue";
 
 
 contacts.addEventListener("click", (()=>{
-    // console.log("contacts");
     try2.style.display = "none";
     showAlarm.style.display = "block";
-    // fullHomepage.style.backgroundColor = 'blue';
-
 }));
 
 home.addEventListener("click", (()=>{
     try2.style.display = "block"
     showAlarm.style.display = "none";
-    // console.log("contacts");
-    // phoneframe.style.backgroundColor = 'red';
+    cameraApp.style.display = "none"
+    video.style.display ="none"
 }));
 
 
-let cameraApp = document.getElementById('cameraApp');
-
-// cameraApp.style.backgroundColor = 'red';
-// cameraApp.style.display = 'none';
 
 
 
@@ -72,18 +72,20 @@ let cameraApp = document.getElementById('cameraApp');
 let video = document.getElementById('video');
 let canvas = document.getElementById('canvas');
 let cameraIcon = document.getElementById('cameraIcon');
+let shutterButton = document.getElementById('shutterButton');
+shutterButton.style.display = "none";
 
 
 cameraIcon.addEventListener('click', (async()=>{
   try2.style.display = "none";
-  showAlarm.style.display = "none";
   cameraApp.style.display = "block";
   video.style.display ="block"
   let snap = await navigator.mediaDevices.getUserMedia({audio:false, video:true})
   video.srcObject = snap;
+  shutterButton.style.display = "block";
 }))
 
-let shutterButton = document.getElementById('shutterButton')
+
 shutterButton.addEventListener("click", (()=>{
   canvas.getContext("2d").drawImage(video, 0,0, canvas.width, canvas.height);
   let imageLink = canvas.toDataURL('image/jpg');
@@ -93,10 +95,31 @@ shutterButton.addEventListener("click", (()=>{
 
 
 
+let musicIcon = document.getElementById("musicIcon");
+musicIcon.addEventListener("click", ()=>{
+  try2.style.display = "none";
+  musicApp.style.display = "block";
+})
 
 
-let time = document.getElementById("time");
-let date, hours, minutes, seconds, amPm;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
