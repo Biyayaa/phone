@@ -102,6 +102,9 @@ musicIcon.addEventListener("click", ()=>{
 })
 
 // Get references to the HTML elements
+
+let songArt = document.getElementById("songArt");
+
 let audioPlayer = document.getElementById("audioPlayer");
 let playButton = document.getElementById("playButton");
 let prevButton = document.getElementById("prevButton");
@@ -110,6 +113,14 @@ let progress = document.getElementById("progress");
 let progressBar = document.getElementById("progressBar");
 let volumeSlider = document.getElementById("volumeSlider");
 let muteButton = document.getElementById("muteButton");
+
+
+
+songArt.innerHTML = `<p class="song-art">Song art of currently playing music appears here.</p>`
+
+
+
+
 
 // Define an array of audio tracks
 let tracks = ["./audio/Burna_Boy_-_Alarm_Clock.mp3", "./audio/Davido-No-Competition-feat.Asake-[TrendyBeatz.com].mp3", "./audio/ODUMODUBLVCK-Declan-Rice.mp3"];

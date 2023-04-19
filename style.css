@@ -97,6 +97,19 @@
     background-color: hotpink;
 }
 
+#songArt{
+    border: 5px solid white;
+    width: 90%;
+    margin: 0 10px;
+    height: 250px;
+    position: absolute;
+    top: 60px;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 #progressBar {
     width: 95%;
     height: 10px;
@@ -111,6 +124,21 @@
     border-radius: 5px;
     background-color: #333;
   }
+
+#controls{
+    display: flex;
+    justify-content: space-between;
+    /* width: 95%; */
+    margin: 0 5px;
+    padding-top: 300px;
+}
+
+#prevButton, #playButton, #nextButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+}
 
 
 /* .home{
