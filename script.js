@@ -94,7 +94,7 @@ shutterButton.addEventListener("click", (()=>{
 }))
 
 
-
+// music player
 let musicIcon = document.getElementById("musicIcon");
 musicIcon.addEventListener("click", ()=>{
   try2.style.display = "none";
@@ -116,22 +116,30 @@ let muteButton = document.getElementById("muteButton");
 
 
 
-songArt.innerHTML = `<p class="song-art">Song art of currently playing music appears here.</p>`
-
-
 
 
 
 // Define an array of audio tracks
-let tracks = ["./audio/Burna_Boy_-_Alarm_Clock.mp3", "./audio/Davido-No-Competition-feat.Asake-[TrendyBeatz.com].mp3", "./audio/ODUMODUBLVCK-Declan-Rice.mp3"];
+let tracks = [
+  {
+    art: "https://i1.sndcdn.com/artworks-IBKIlYMdHb6oJNNm-lno2PA-t500x500.jpg",
+    song: "./audio/Burna_Boy_-_Alarm_Clock.mp3"
+  }
+];
+
+
 
 // Set the current track to the first track in the array
 let currentTrack = 0;
 
+
+
 // Function to play the current track
 function playTrack() {
+  songArt.innerHTML = `<img id="trackImage" src="${tracks[currentTrack].art}"/>`
+
   // Set the audio source to the current track and play it
-  audioPlayer.src = tracks[currentTrack];
+  audioPlayer.src = tracks[currentTrack].song;
   audioPlayer.play();
   // Change the play button icon to a pause icon
   playButton.innerHTML = "<i class='icofont-pause'></i>";
