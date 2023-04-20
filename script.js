@@ -123,8 +123,23 @@ let muteButton = document.getElementById("muteButton");
 let tracks = [
   {
     art: "https://i1.sndcdn.com/artworks-IBKIlYMdHb6oJNNm-lno2PA-t500x500.jpg",
-    song: "./audio/Burna_Boy_-_Alarm_Clock.mp3"
-  }
+    song: "./audio/Burna_Boy_-_Alarm_Clock.mp3",
+    artist: "Burnaboy",
+    title: "Alarm Clock"
+  },
+  {
+    art: "https://trendybeatz.com/images/ODUMODUBLVCK-Declan-Rice-Artwork.jpg",
+    song: "./audio/ODUMODUBLVCK-Declan-Rice.mp3",
+    artist: "ODUMODUBLVCK",
+    title: "Declan Rice"
+  },
+  {
+    art: "https://westsidemusicblog.net/wp-content/uploads/2023/04/pic_down1681741843148-464x464.jpg",
+    song: "./audio/Davido-No-Competition-feat.Asake-[TrendyBeatz.com].mp3",
+    artist: "Davido ft Asake",
+    title: "No Competition"
+  },
+
 ];
 
 
