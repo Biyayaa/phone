@@ -123,6 +123,8 @@ function displayImages() {
 let lastImageContainer = document.querySelector('.last-image-container');
 let galleryContainer = document.querySelector('.gallery-container');
 
+let currentImageIndex = images.length - 1;
+
 galleryIcon.addEventListener('click', () => {
   try2.style.display = "none";
   galleryApp.style.display = "block";
@@ -133,16 +135,35 @@ function displayImages() {
   let images = JSON.parse(localStorage.getItem('images')) || [];
   lastImageContainer.style.backgroundImage = `url(${images[images.length - 1]})`;
   galleryContainer.innerHTML = '';
-  for (let i = 0; i < images.length; i++) {
+  for (let i = images.length - 1; i >= 0; i--) {
     let item = document.createElement('div');
     item.classList.add('gallery-item');
     item.style.backgroundImage = `url(${images[i]})`;
     item.addEventListener('click', () => {
-      // do something when the image is clicked
+      lastImageContainer.style.backgroundImage = `url(${images[i]})`;
     });
     galleryContainer.appendChild(item);
   }
 }
+
+let addPhoto = document.getElementById("addPhoto");
+let addYourPhoto = document.getElementById("addYourPhoto");
+addYourPhoto.style.display = "none"
+addPhoto.addEventListener("click",()=>{
+  addYourPhoto.style.display = "block"
+})
+addYourPhoto.addEventListener("change", (event)=>{
+  let file = event.target.files[0];
+  let reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = ()=>{
+    images.push(reader.result);
+    localStorage.setItem('images', JSON.stringify(images));
+    currentImageIndex = images.length - 1;
+    displayImages();
+    addYourPhoto.style.display = "none"
+  }
+});
 
 
 

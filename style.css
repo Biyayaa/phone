@@ -361,3 +361,22 @@ button:hover {
   background-position: center;
   cursor: pointer;
 }
+
+#addPhoto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 50px;
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    right: 20px;
+    bottom: 50px;
+}
+
+#addYourPhoto{
+    position: absolute;
+    right: -110px;
+    bottom: 100px;
+}
