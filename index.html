@@ -125,16 +125,15 @@
 
                 <!-- Camera -->
                 <div id="cameraApp">
-
-                   
-
                     <video id="video" autoplay src=""></video>
                     <canvas id="canvas"></canvas>
-
-                    
-
-                    <img class="icons" id="shutterButton" src="./images/camera.svg" alt="">
-
+                    <div class="camera-buttons">
+                      <div class="pics-taken" id="picsTaken"></div>
+                      <div class="shutter-button-wrapper">
+                        <div id="shutterButton" class="shutter-button"></div>
+                      </div>
+                      <div id="downloadPic" class="download-button"></div>
+                    </div>
                 </div>
 
 
@@ -164,11 +163,8 @@
 
 
                     <!-- song art for currently playing -->
-                    <div id="songArt">
-                        
+                    <div id="songArt">     
                     </div>
-
-
                     <!-- audio player complete controls -->
                     <audio id="audioPlayer">
                         <source src="" type="audio/mpeg">
@@ -190,8 +186,6 @@
 
 
             </div>
-
-
 
             <!-- contacts -->
             

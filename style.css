@@ -1,9 +1,9 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-.body{
+.body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,7 +11,7 @@
     padding-top: 10px;
 }
 
-.phoneframe{
+.phoneframe {
     width: 272px;
     height: 570px;
     border: 7px solid black;
@@ -20,19 +20,19 @@
     position: relative;
 }
 
-.fullhomepage{
+.fullhomepage {
     height: 570px;
     /* background-color: red; */
 }
 
-#try{
+#try {
     height: 570px;
     background-image: url(./images/desktop-wallpaper-samsung-s22-samsung-galaxy-s22-thumbnail.jpg);
 }
 
 
 
-.notifications{
+.notifications {
     display: flex;
     padding-top: 5px;
     align-items: center;
@@ -44,13 +44,13 @@
     top: 0;
 }
 
-#homeTime{
+#homeTime {
     padding-left: 7px;
     color: white;
     font-size: 13px;
 }
 
-.battery{
+.battery {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -59,7 +59,7 @@
     color: white;
 }
 
-.camera{
+.camera {
     width: 12px;
     height: 12px;
     border: 2px solid silver;
@@ -67,7 +67,7 @@
     margin-left: 70px;
 }
 
-#cameraApp{
+#cameraApp {
     background-color: black;
 }
 
@@ -82,6 +82,7 @@
     z-index: 1;
     align-items: center;
 }
+
 .second-row-icons {
     position: absolute;
     left: 0;
@@ -93,23 +94,23 @@
     align-items: center;
 }
 
-.music-app{
+.music-app {
     background-color: hotpink;
 }
 
-#songArt{
+#songArt {
     border: 5px solid white;
     width: 90%;
     margin: 0 10px;
     height: 250px;
     position: absolute;
-    top: 60px;  
+    top: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#trackImage{
+#trackImage {
     position: relative;
     width: 100%;
     height: 100%;
@@ -123,15 +124,15 @@
     margin-left: 10px;
     background-color: #ccc;
     margin-top: 20px;
-  }
-  
-  #progress {
+}
+
+#progress {
     height: 100%;
     border-radius: 5px;
     background-color: #333;
-  }
+}
 
-#controls{
+#controls {
     display: flex;
     justify-content: space-between;
     /* width: 95%; */
@@ -139,7 +140,9 @@
     padding-top: 300px;
 }
 
-#prevButton, #playButton, #nextButton{
+#prevButton,
+#playButton,
+#nextButton {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -157,16 +160,17 @@
     align-items: center; 
 } */
 
-.icons{
+.icons {
     width: 45px;
 }
 
-footer{
+footer {
     background-color: rgb(10, 33, 10);
     width: 272.5px;
     height: 10px;
     position: absolute;
-    bottom: 0; /* added to fix to bottom of phoneframe */
+    bottom: 0;
+    /* added to fix to bottom of phoneframe */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -174,7 +178,7 @@ footer{
     border-bottom-right-radius: 2px;
 }
 
-.navigation-bar{
+.navigation-bar {
     background-color: white;
     width: 100px;
     height: 3px;
@@ -263,18 +267,51 @@ button:hover {
 }
 
 
-#showAlarm, #cameraApp, #video, #musicApp{
+#showAlarm,
+#cameraApp,
+#video,
+#musicApp {
     height: 570px;
     display: none;
     width: 100%;
 }
 
-#shutterButton{
+.camera-buttons{
     position: absolute;
-    bottom: 10px;
+    bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-#video{
+#shutterButton {
+    /* position: absolute; */
+    /* bottom: 30px; */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    background-color: white;
+}
+
+#picsTaken{
+    /* position: absolute; */
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    background-color: blue;
+    background-position: center;
+}
+
+#downloadPic{
+    width: 20px;
+    height: 20px;
+    background-color: yellow;
+    border: 1px solid yellow;
+}
+
+#video {
     position: absolute;
-    
 }

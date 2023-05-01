@@ -9,7 +9,7 @@ let musicApp = document.getElementById('musicApp');
 let homeTime = document.getElementById('homeTime');
 let time = document.getElementById("time");
 let date, hours, minutes, seconds, amPm;
-let cameraApp = document.getElementById('cameraApp');
+
 
 // Hide other pages on load
 musicApp.style.display = "none";
@@ -73,8 +73,11 @@ let video = document.getElementById('video');
 let canvas = document.getElementById('canvas');
 let cameraIcon = document.getElementById('cameraIcon');
 let shutterButton = document.getElementById('shutterButton');
+let cameraApp = document.getElementById('cameraApp');
+let picsTaken = document.getElementById('picsTaken');
 shutterButton.style.display = "none";
 
+let images = JSON.parse(localStorage.getItem('images')) || [];
 
 cameraIcon.addEventListener('click', (async()=>{
   try2.style.display = "none";
@@ -83,15 +86,32 @@ cameraIcon.addEventListener('click', (async()=>{
   let snap = await navigator.mediaDevices.getUserMedia({audio:false, video:true})
   video.srcObject = snap;
   shutterButton.style.display = "block";
+  picsTaken.style.backgroundImage = `url(${images[images.length - 1]})`;
 }))
-
 
 shutterButton.addEventListener("click", (()=>{
   canvas.getContext("2d").drawImage(video, 0,0, canvas.width, canvas.height);
   let imageLink = canvas.toDataURL('image/jpg');
-  console.log(imageLink);
-
+  images.push(imageLink);
+  localStorage.setItem('images', JSON.stringify(images));
+  picsTaken.style.backgroundImage = `url(${images[images.length - 1]})`;
 }))
+
+function displayImages() {
+  for (let i = 0; i < images.length; i++) {
+    let img = document.createElement('img');
+    img.src = images[i];
+    picsTaken.appendChild(img);
+  }
+}
+
+
+
+
+
+
+
+
 
 
 // music player
@@ -113,10 +133,6 @@ let progress = document.getElementById("progress");
 let progressBar = document.getElementById("progressBar");
 let volumeSlider = document.getElementById("volumeSlider");
 let muteButton = document.getElementById("muteButton");
-
-
-
-
 
 
 // Define an array of audio tracks
@@ -142,12 +158,8 @@ let tracks = [
 
 ];
 
-
-
 // Set the current track to the first track in the array
 let currentTrack = 0;
-
-
 
 // Function to play the current track
 function playTrack() {
