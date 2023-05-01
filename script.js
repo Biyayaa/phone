@@ -61,12 +61,17 @@ contacts.addEventListener("click", (()=>{
     showAlarm.style.display = "block";
 }));
 
-home.addEventListener("click", (()=>{
+home.addEventListener("click", ()=>{
     try2.style.display = "block"
     showAlarm.style.display = "none";
-    cameraApp.style.display = "none"
-    video.style.display ="none"
-}));
+    cameraApp.style.display = "none";
+    video.style.display ="none";
+    galleryApp.style.display = "none";
+    video.pause();
+    if (video.srcObject) {
+      video.srcObject.getTracks().forEach(track => track.stop());
+    }
+});
 
 
 
@@ -99,6 +104,8 @@ shutterButton.addEventListener("click", (()=>{
   images.push(imageLink);
   localStorage.setItem('images', JSON.stringify(images));
   picsTaken.style.backgroundImage = `url(${images[images.length - 1]})`;
+  picsTaken.style.backgroundSize = "cover";
+  picsTaken.style.backgroundPosition = "center";
 }))
 
 function displayImages() {
