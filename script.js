@@ -6,6 +6,8 @@ let fullHomepage = document.getElementById('fullHomepage');
 let showAlarm = document.getElementById('showAlarm');
 let try2 = document.getElementById('try');
 let musicApp = document.getElementById('musicApp');
+let cameraApp = document.getElementById('cameraApp');
+let galleryApp = document.getElementById('galleryApp');
 let homeTime = document.getElementById('homeTime');
 let time = document.getElementById("time");
 let date, hours, minutes, seconds, amPm;
@@ -13,6 +15,8 @@ let date, hours, minutes, seconds, amPm;
 
 // Hide other pages on load
 musicApp.style.display = "none";
+cameraApp.style.display = "none";
+galleryApp.style.display = "none";
 
 
 
@@ -73,7 +77,6 @@ let video = document.getElementById('video');
 let canvas = document.getElementById('canvas');
 let cameraIcon = document.getElementById('cameraIcon');
 let shutterButton = document.getElementById('shutterButton');
-let cameraApp = document.getElementById('cameraApp');
 let picsTaken = document.getElementById('picsTaken');
 shutterButton.style.display = "none";
 
@@ -91,6 +94,7 @@ cameraIcon.addEventListener('click', (async()=>{
 
 shutterButton.addEventListener("click", (()=>{
   canvas.getContext("2d").drawImage(video, 0,0, canvas.width, canvas.height);
+  canvas.style.display = "none";
   let imageLink = canvas.toDataURL('image/jpg');
   images.push(imageLink);
   localStorage.setItem('images', JSON.stringify(images));
@@ -106,6 +110,32 @@ function displayImages() {
 }
 
 
+
+
+// Gallery App
+let lastImageContainer = document.querySelector('.last-image-container');
+let galleryContainer = document.querySelector('.gallery-container');
+
+galleryIcon.addEventListener('click', () => {
+  try2.style.display = "none";
+  galleryApp.style.display = "block";
+  displayImages();
+});
+
+function displayImages() {
+  let images = JSON.parse(localStorage.getItem('images')) || [];
+  lastImageContainer.style.backgroundImage = `url(${images[images.length - 1]})`;
+  galleryContainer.innerHTML = '';
+  for (let i = 0; i < images.length; i++) {
+    let item = document.createElement('div');
+    item.classList.add('gallery-item');
+    item.style.backgroundImage = `url(${images[i]})`;
+    item.addEventListener('click', () => {
+      // do something when the image is clicked
+    });
+    galleryContainer.appendChild(item);
+  }
+}
 
 
 
